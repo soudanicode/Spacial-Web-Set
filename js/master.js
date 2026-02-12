@@ -23,12 +23,13 @@ document.addEventListener("click" , (e) => {
         if (!settingBox.contains(e.target)){
             settingBox.classList.remove("show");
         }
-        
-
     }
-    
-
 })
+// end Setting box
+// Start Color List
+const getli=document.querySelectorAll(".colors-list li");
+console.log(getli)
+// data set use por get color
 
 
 

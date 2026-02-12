@@ -33,6 +33,34 @@
     padding: 5px 0px;
     cursor: pointer;
 }
+
+.setting-box .setting-container .option-box{
+    padding: 20px;
+}
+.setting-box .option-box .colors-list{
+    display: flex;
+    gap: 5px;
+    padding:  10px 0px 0px 40px;
+}
+.setting-box .option-box .colors-list li{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;  
+    cursor: pointer;
+}
+.setting-box .option-box .colors-list li:nth-child(1){
+    background-color: #75f452;
+}
+.setting-box .option-box .colors-list li:nth-child(2){
+    background-color: #f452b1;
+}
+.setting-box .option-box .colors-list li:nth-child(3){
+    background-color: #684aba;
+}
+.setting-box .option-box .colors-list li:nth-child(4){
+    background-color: #b3ba4a;
+}
+
 /* General settings */
 *,body{
     box-sizing: border-box;
