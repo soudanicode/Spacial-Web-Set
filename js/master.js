@@ -24,12 +24,24 @@ document.addEventListener("click" , (e) => {
             settingBox.classList.remove("show");
         }
     }
-})
+});
 // end Setting box
 // Start Color List
 const getli=document.querySelectorAll(".colors-list li");
-console.log(getli)
-// data set use por get color
+// console.log(getli)
+getli.forEach(li => {
+    li.addEventListener("click", (el) => {
+        let dataColor = el.target.dataset.color;
+        const rottElelment = document.documentElement;
+
+        window.localStorage.mainColor = dataColor;
+        localStorage.age = 25;
+        console.log(localStorage.mainColor);
+        rottElelment.style.setProperty('--spacial-color',localStorage.mainColor);
+    });
+
+
+})
 
 
 

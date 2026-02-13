@@ -3,9 +3,8 @@
 
 /* css Variables */
 :root{
-    --light-special:#fffff0;
-    --orange-color:#ff8000;
-    --main-col:#ffff;
+    --spacial-color:#ff8000;
+    --main-color:#ffff;
 }
 /* setting Box */
 .setting-box{
@@ -97,7 +96,7 @@ body{
     z-index: 1;
 }
 .landing-page .header-aria{
-    color: var(--main-col);
+    color: var(--main-color);
     position: relative;
     z-index: 2;
     display: flex;
@@ -107,9 +106,9 @@ body{
 .header-aria .logo{
     width: 300px;
     padding: 15px;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
-    color: var(--light-special);
+    color: var(--main-color);
 }
 .header-aria li{
     display:inline;
@@ -117,10 +116,10 @@ body{
     transition: ease 0.3s;
 }
 #active{
-    color: var(--orange-color);
+    color: var(--spacial-color);
 }
 .header-aria li:hover{
-    color:var(--orange-color);
+    color:var(--spacial-color);
 }
 
 .introduction{
@@ -133,11 +132,11 @@ body{
 }
 .introduction h2{
     font-size: 32px;
-    color: var(--main-col);
+    color: var(--main-color);
     margin: 0 0 20px;
 }
 .introduction h2 span{
-    color: var(--orange-color);
+    color: var(--spacial-color);
 }
 .introduction p{
     font-size: 18px;
