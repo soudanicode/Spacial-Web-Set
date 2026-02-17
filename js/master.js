@@ -28,20 +28,18 @@ document.addEventListener("click" , (e) => {
 // end Setting box
 // Start Color List
 const getli=document.querySelectorAll(".colors-list li");
-// console.log(getli)
 getli.forEach(li => {
     li.addEventListener("click", (el) => {
-        let dataColor = el.target.dataset.color;
-        const rottElelment = document.documentElement;
-
-        window.localStorage.mainColor = dataColor;
-        localStorage.age = 25;
-        console.log(localStorage.mainColor);
-        rottElelment.style.setProperty('--spacial-color',localStorage.mainColor);
+        document.documentElement.style.setProperty('--spacial-color',localStorage.getItem("optionColor"));
+        // save color in locale storage
+        localStorage.setItem("optionColor",el.target.dataset.color);
     });
-
-
-})
+});
+// check if locale storage is empty
+let storedColor = localStorage.getItem("optionColor");
+if (storedColor !== null){
+    rottElelment.style.setProperty('--spacial-color',localStorage.getItem("optionColor"));
+}
 
 
 
