@@ -3,8 +3,9 @@
 
 /* css Variables */
 :root{
-    /* --spacial-color:#ff8000; */
-    --main-color:#ffff;
+    --light-special:#fffff0;
+    --orange-color:#ff8000;
+    --main-col:#ffff;
 }
 /* setting Box */
 .setting-box{
@@ -32,34 +33,6 @@
     padding: 5px 0px;
     cursor: pointer;
 }
-
-.setting-box .setting-container .option-box{
-    padding: 20px;
-}
-.setting-box .option-box .colors-list{
-    display: flex;
-    gap: 5px;
-    padding:  10px 0px 0px 40px;
-}
-.setting-box .option-box .colors-list li{
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;  
-    cursor: pointer;
-}
-.setting-box .option-box .colors-list li:nth-child(1){
-    background-color: #75f452;
-}
-.setting-box .option-box .colors-list li:nth-child(2){
-    background-color: #f452b1;
-}
-.setting-box .option-box .colors-list li:nth-child(3){
-    background-color: #684aba;
-}
-.setting-box .option-box .colors-list li:nth-child(4){
-    background-color: #b3ba4a;
-}
-
 /* General settings */
 *,body{
     box-sizing: border-box;
@@ -96,7 +69,7 @@ body{
     z-index: 1;
 }
 .landing-page .header-aria{
-    color: var(--main-color);
+    color: var(--main-col);
     position: relative;
     z-index: 2;
     display: flex;
@@ -106,9 +79,9 @@ body{
 .header-aria .logo{
     width: 300px;
     padding: 15px;
-    font-size: 40px;
+    font-size: 60px;
     font-weight: bold;
-    color: var(--main-color);
+    color: var(--light-special);
 }
 .header-aria li{
     display:inline;
@@ -116,10 +89,10 @@ body{
     transition: ease 0.3s;
 }
 #active{
-    color: var(--spacial-color);
+    color: var(--orange-color);
 }
 .header-aria li:hover{
-    color:var(--spacial-color);
+    color:var(--orange-color);
 }
 
 .introduction{
@@ -132,11 +105,11 @@ body{
 }
 .introduction h2{
     font-size: 32px;
-    color: var(--main-color);
+    color: var(--main-col);
     margin: 0 0 20px;
 }
 .introduction h2 span{
-    color: var(--spacial-color);
+    color: var(--orange-color);
 }
 .introduction p{
     font-size: 18px;
