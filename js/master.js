@@ -26,20 +26,34 @@ document.addEventListener("click" , (e) => {
     }
 });
 // end Setting box
-// Start Color List
+// switch color
 const getli=document.querySelectorAll(".colors-list li");
+// loop on list items
 getli.forEach(li => {
+    // click on every list
     li.addEventListener("click", (el) => {
+        // set color in root
         document.documentElement.style.setProperty('--spacial-color',localStorage.getItem("optionColor"));
         // save color in locale storage
         localStorage.setItem("optionColor",el.target.dataset.color);
+        // remove active class for evre children
+        document.querySelectorAll(".colors-list li").forEach((el)=> {
+            el.classList.remove("active");
+            // cheking if spacial color == color saved in lacale storage
+            if (el.dataset.color == localStorage.getItem("optionColor") ){
+                // add active class
+                li.classList.add("active")
+            }
+});
     });
 });
 // check if locale storage is empty
 let storedColor = localStorage.getItem("optionColor");
 if (storedColor !== null){
-    rottElelment.style.setProperty('--spacial-color',localStorage.getItem("optionColor"));
+    document.documentElement.style.setProperty('--spacial-color',localStorage.getItem("optionColor"));
+    
 }
+
 
 
 
