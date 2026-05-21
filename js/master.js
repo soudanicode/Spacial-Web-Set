@@ -90,6 +90,30 @@ if (localStorage.getItem("optionColor") !== null){
 }
 // end switch color---
 
+// start Our skill
+let skillProgress= document.querySelectorAll(".skill-progress");
+let skillSpan= document.querySelectorAll(".skill-progress span");
+let innerBox= document.querySelectorAll(".inner-box");
+
+
+skillSpan.forEach((span) =>{
+    span.style.width = span.dataset.progress;
+})
+  
+// get data & set
+innerBox.forEach(box =>{
+    let getDataProgress = box.querySelector(".skill-progress span").dataset.progress
+    console.log(getDataProgress)
+    box.querySelector(".skill-name").setAttribute("data-percent", getDataProgress)
+})
+
+
+
+
+
+
+// end Our skill
+
 
 
 
