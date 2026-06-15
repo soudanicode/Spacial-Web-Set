@@ -6,7 +6,8 @@
     /* --spacial-color:#ff8000; */
     --main-color:#ffff;
     --transition-3:.3 ease;
-    --size-paragraph:18px
+    --size-paragraph:18px;
+    --anime-bullet:anim-bullet 1s infinite both linear;
 }
 
 /* General settings */
@@ -101,11 +102,11 @@ body{
     transition:var(--transition-3);
 }
 /* start option box backgrounds*/
-.option-box-backg .random-backg{
+.option-box .option-display ,.option-box .option-backg{
     display: flex;
     gap: 5px;
 }
-.option-box-backg span{
+.option-box span{
     text-align: center;
     background-color:#333;
     width: 57px;
@@ -121,9 +122,42 @@ body{
     opacity: 0.5;
     transition: opacity .3 linear;
 }
-.option-box-backg .active{
+.option-box .active{
     opacity:1;
 }
+/* Start Nav bullet */
+.nav-bullets{
+    position:fixed;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    width: 40px;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+.nav-bullets .bullet{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border:2px solid var(--spacial-color);
+    margin: 15px auto;
+}
+.nav-bullets .bullet .tooltip{
+    position: absolute;
+    top: -5px;
+    right: 25px;
+    width: 120px;
+    background-color: var(--spacial-color);
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius: 50vh;
+    text-align: center;
+    cursor: pointer;
+}
+
 /* Start Landing Page */
 .landing-page{
     position: relative;
@@ -192,8 +226,6 @@ body{
 
 /* start About us  */
 .about-us{
-    /* padding-top: 50px;
-    padding-bottom: 50px; */
     display: flex;
 }
 .about-us .info-box{
@@ -249,7 +281,6 @@ body{
     background-color: var(--spacial-color);
     opacity:0.5 ;  
 }
-
 .skills{
     position: relative;
     max-width: 600px;
@@ -309,6 +340,18 @@ body{
 }
 /* End skills  */
 /* start time line */
+@keyframes anim-bullet {
+    0% {
+    box-shadow: 0px 0px 1px 1px rgb(59 130 171 / 80%);
+    }
+
+    50% {
+    box-shadow: 0px 0px 1px 3px rgb(59 130 171 / 50%);
+    }
+    100% {
+    box-shadow: 0px 0px 1px 6px rgb(59 130 171 / 60%);
+    }    
+}
 .container-timeline{
     background-color:#f1f0f0;
 }
@@ -329,8 +372,6 @@ body{
     position: relative;
     overflow: hidden;
     padding-bottom: 5px;
-    /* display: flex;
-    flex-direction: column; */
     display: grid;
 }
 .timeline .timeline-content::before{
@@ -348,12 +389,10 @@ body{
     display: flex;
     flex-direction: column;
     margin-bottom: 25px;
-    
 }
 .timeline-content .right-box{
     justify-self: flex-end;
 }
-  
 .timeline-content .content-box .year{
     position: relative;
     padding: 5px 10px;
@@ -378,8 +417,8 @@ body{
     border-radius: 50%;
     background-color: #012169;
     width: 12px;
-    left: -35px;
-    box-shadow: 0px 0px 1px 7px rgb(59 130 171 / 33%);
+    left: -34px;
+    animation: var(--anime-bullet);
 }
 .left-box .year ::after {
     content:"";
@@ -391,16 +430,13 @@ body{
     background-color: #012169;
     width: 12px;
     right: calc(-31px - 1px - 6px);
-    
-    box-shadow: 0px 0px 1px 7px rgb(59 130 171 / 33%);
+    animation: var(--anime-bullet);
 }
-
 .timeline-content .content-box .psudo-content{
     padding: 15px;
     border-radius: 20px;
     background-color: #fff;
     box-shadow: 2px 2px 3px 0px  #161c2d1a ,-2px -2px 3px 0px  transparent;
-  
 }
 .content-box .psudo-content h3{
     font-size: 20px;
@@ -414,5 +450,4 @@ body{
     letter-spacing: 0.5px;
     color: #333333;
 }
-
 /* end time line */
