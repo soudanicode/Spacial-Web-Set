@@ -21,10 +21,9 @@ let landingPage = document.querySelector(".landing-page");
 // Option random background---
 let backroundNumber = 4;
 let backgroundInterval;
-// دالة التشغيل
 function randommizeImg(){
     clearInterval(backgroundInterval);
-    if(localStorage.getItem("optionBackg") === "random"){
+    if(localStorage.getItem("optionBackg") === "random" |localStorage.getItem("optionBackg") == null){
         backgroundInterval = setInterval(function (){
         // generate Random Number 
             let randomNumber= Math.floor(Math.random()*backroundNumber) + 1;
@@ -42,7 +41,7 @@ function activeStatusBackg(){
     getspan.forEach((ele)=> {
         ele.classList.remove("active");
     })
-    if(localStorage.getItem("optionBackg") === "random"){
+    if(localStorage.getItem("optionBackg") === "random" |localStorage.getItem("optionBackg") == null){
         document.querySelector(".on").classList.add("active");
     }
     else{
@@ -70,7 +69,7 @@ function activeStatusTolltip(){
     if(localStorage.getItem("optionTooltip") === "show"){
         document.querySelector(".yes").classList.add("active");
     }
-    else{
+    else if(localStorage.getItem("optionTooltip") !== "show" |localStorage.getItem("optionTooltip") == null){
         document.querySelector(".no").classList.add("active");
     }
 }
@@ -89,7 +88,7 @@ function tooltipDisplay(){
     if (localStorage.getItem("optionTooltip") === "show"){
         document.querySelector(".nav-bullets").style.display = "block";
     }
-    else{
+    else if(localStorage.getItem("optionTooltip") !== "show" |localStorage.getItem("optionTooltip") == null){
         document.querySelector(".nav-bullets").style.display = "none";
     }
 }
@@ -123,7 +122,16 @@ getli.forEach(li => {
 if (localStorage.getItem("optionColor") !== null){
     document.documentElement.style.setProperty('--spacial-color',localStorage.getItem("optionColor"));
 }
-
+if (localStorage.getItem("optionColor") == null){
+    document.documentElement.style.setProperty('--spacial-color',"#75f452");
+}
+// reset Button
+document.querySelector(".reset-button").onclick = function (){
+    localStorage.removeItem("optionColor");
+    localStorage.removeItem("optionBackg");
+    localStorage.removeItem("optionTooltip");
+    window.location.reload();
+}
 // end Setting box
 
 // start Our skill ----
@@ -159,6 +167,15 @@ window.onscroll = function (){
     }
 }
 // end Our skill
+// start Mega menu
+let menuIcon = document.querySelector(".menu-icon");
+let megaMenu = document.querySelector(".mega-menu");
+
+menuIcon.onclick = function (ev){
+    megaMenu.classList.toggle("show-mega-menu")
+    document.querySelector(".header-aria .menu-icon .middel").classList.toggle("move-to-left");
+}
+// end Mega menu
 
 
 
